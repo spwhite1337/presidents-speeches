@@ -1,0 +1,113 @@
+{
+    "eras": {
+        "neoliberal": [
+            "trump",
+            "obama",
+            "bush_2",
+            "clinton",
+            "bush_1",
+            "reagan"
+        ],
+        "postWWII": [
+            "carter",
+            "ford",
+            "nixon",
+            "johnson",
+            "kennedy",
+            "eisenhower"
+        ],
+        "WorldWars": [
+            "truman",
+            "fdr",
+            "hoover",
+            "coolidge",
+            "harding",
+            "wilson"
+        ],
+        "GildedAge": [
+            "taft",
+            "teddy",
+            "mckinley",
+            "cleveland",
+            "harrison",
+            "arthur"
+        ],
+        "CivilWar": [
+            "hayes",
+            "grant",
+            "a_johnson",
+            "lincoln",
+            "buchanan",
+            "pierce"
+        ],
+        "Expansion": [
+            "fillmore",
+            "taylor",
+            "polk",
+            "tyler",
+            "van_buren",
+            "jackson"
+        ],
+        "Founding": [
+            "quincy_adams",
+            "monroe",
+            "madison",
+            "jefferson",
+            "adams",
+            "washington"
+        ]
+    },
+    "parties": {
+        "republicans": [
+            "trump",
+            "bush_2",
+            "bush_1",
+            "reagan",
+            "ford",
+            "nixon",
+            "eisenhower",
+            "hoover",
+            "coolidge",
+            "harding",
+            "taft",
+            "teddy",
+            "mckinley",
+            "harrison",
+            "arthur",
+            "hayes",
+            "grant",
+            "lincoln"
+        ],
+        "democrats": [
+            "obama",
+            "clinton",
+            "carter",
+            "johnson",
+            "kennedy",
+            "truman",
+            "fdr",
+            "wilson",
+            "cleveland",
+            "buchanan",
+            "pierce",
+            "polk",
+            "van_buren",
+            "jackson"
+        ],
+        "whig": [
+            "fillmore",
+            "taylor",
+            "tyler"
+        ],
+        "DR": [
+            "quincy_adams",
+            "monroe",
+            "madison",
+            "jefferson"
+        ],
+        "federalist": [
+            "adams",
+            "washington"
+        ]
+    }
+}
