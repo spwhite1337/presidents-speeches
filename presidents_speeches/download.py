@@ -39,7 +39,6 @@ class DownloadSpeeches(object):
                 except Exception as err:
                     logger.info(err)
                     continue
-
                 # Skip first and last paragraphs that are fillers
                 paragraphs = soup.findAll('p')[1:-2]
                 # Get date of speech
