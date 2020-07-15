@@ -1,0 +1,8 @@
+*.egg-info
+*.pyc
+*.iml
+*.xml
+*.ipynb_checkpoints/
+*.pkl
+*.csv
+.idea/
