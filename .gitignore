@@ -2,6 +2,7 @@
 *.pyc
 *.iml
 *.xml
+*.ipynb
 *.ipynb_checkpoints/
 *.pkl
 *.csv
