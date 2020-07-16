@@ -34,7 +34,7 @@ class SpeechCurator(object):
         self.vectorized = None
 
     def _tokenize(self, speech: str) -> list:
-        no_specials = re.sub('[^a-zA-Z \']', '', speech)
+        no_specials = re.sub('[^a-zA-Z \']', ' ', speech)
         return [w for w in no_specials.lower().split() if w not in self.stoplist]
 
     def create_corpus(self):
