@@ -7,3 +7,8 @@
 *.pkl
 *.csv
 .idea/
+
+# Ignore gensim models
+*.model
+*.index
+*.projection
