@@ -9,7 +9,7 @@ from tqdm import tqdm
 from config import ROOT_DIR, logger
 
 
-class DownloadSpeeches(object):
+class SpeechDownloader(object):
     """
     Scrape speech text for each president
     """
@@ -30,7 +30,7 @@ class DownloadSpeeches(object):
         logger.info('Downloading Speeches from Miller Center')
         speeches = {}
         for president, urls in tqdm(self.urls.items()):
-            pres_speeches, date_speeches = [], []
+            pres_speeches, downloaded_urls = [], []
             for url in tqdm(urls):
                 # Scrape speech
                 try:
@@ -41,12 +41,12 @@ class DownloadSpeeches(object):
                     continue
                 # Skip first and last paragraphs that are fillers
                 paragraphs = soup.findAll('p')[1:-2]
-                # Get date of speech
-                date_speeches.append(paragraphs[1])
                 # Join the text of the speech
                 speech = ' '.join([p.text for p in paragraphs[2:] if p is not None])
+                # Gather
                 pres_speeches.append(speech)
-            speeches[president] = pres_speeches
+                downloaded_urls.append(url)
+            speeches[president] = {'speeches': pres_speeches, 'urls': downloaded_urls}
 
         logger.info('Saving Speeches')
         with open(os.path.join(self.save_dir, 'speeches.json'), 'w') as fp:
@@ -56,5 +56,5 @@ class DownloadSpeeches(object):
 
 
 def download():
-    downloader = DownloadSpeeches()
+    downloader = SpeechDownloader()
     downloader.download_speeches()
