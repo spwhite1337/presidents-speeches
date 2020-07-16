@@ -66,7 +66,8 @@ class SpeechCurator(object):
         logger.info('Vectorizing Corpus')
         # Map corpus to dictionary
         self.dictionary = corpora.Dictionary(self.corpus['documents'])
-        # Map corpus to vector with the dictionary
+
+        # Vectorize corpus
         self.vectorized = [self.dictionary.doc2bow(doc) for doc in self.corpus['documents']]
 
     def save(self):
@@ -77,11 +78,11 @@ class SpeechCurator(object):
         with open(os.path.join(self.save_dir, 'corpus.pkl'), 'wb') as fp:
             pickle.dump(self.corpus, fp)
 
-        logger.info('Saving Vectorized Corpus')
-        corpora.MmCorpus.serialize(os.path.join(self.save_dir, 'vectorized.mm'), self.vectorized)
-
         logger.info('Saving Dictionary')
         self.dictionary.save(os.path.join(self.save_dir, 'dictionary.dict'))
+
+        logger.info('Saving Vectorized Corpus')
+        corpora.MmCorpus.serialize(os.path.join(self.save_dir, 'vectorized.mm'), self.vectorized)
 
 
 def curate():

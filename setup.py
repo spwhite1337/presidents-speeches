@@ -9,7 +9,8 @@ setup(
     packages=find_packages(),
     entry_points={'console_scripts': [
         'ps_download = presidents_speeches.download:download',
-        'ps_curate = presidents_speeches.curate:curate'
+        'ps_curate = presidents_speeches.curate:curate',
+        'ps_train = presidents_speeches.models:model'
     ]},
     install_requires=[
         'requests',
