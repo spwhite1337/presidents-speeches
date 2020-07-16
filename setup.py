@@ -8,7 +8,8 @@ setup(
     author_email='spwhite1337@gmail.com',
     packages=find_packages(),
     entry_points={'console_scripts': [
-        'ps_download = presidents_speeches.download:download'
+        'ps_download = presidents_speeches.download:download',
+        'ps_curate = presidents_speeches.curate:curate'
     ]},
     install_requires=[
         'requests',
