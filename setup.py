@@ -10,7 +10,8 @@ setup(
     entry_points={'console_scripts': [
         'ps_download = presidents_speeches.download:download',
         'ps_curate = presidents_speeches.curate:curate',
-        'ps_train = presidents_speeches.models:model'
+        'ps_train = presidents_speeches.models:model',
+        'ps_predict = presidents_speeches.predictor:prediction_cli'
     ]},
     install_requires=[
         'requests',
