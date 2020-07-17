@@ -11,11 +11,7 @@ An input query is mapped to this latent space and compared to the corpus of docu
 speeches). The most similar president and speech are returned (default is the top 10 most similar, but it is tunable). 
 See examples below for some cool results.
 
-![Presidents Logo](/docs/lincoln.jpg =256x)
-
-<img src="/docs/lincoln.jpg">
-
-<img src="/docs/lincoln.jpg" width="200">
+<img src="/docs/lincoln.jpg" alt="Presidents Logo" width="256">
 
 ## Procedure
 
