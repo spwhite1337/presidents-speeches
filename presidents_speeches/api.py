@@ -121,7 +121,7 @@ class SpeechPredictor(object):
         return {query: output}
 
 
-def prediction_cli():
+def api_cli():
     parser = argparse.ArgumentParser(prog='Presidential similarity')
     parser.add_argument('--query', type=str, default='Fake News')
     parser.add_argument('--num_out', type=int, default=10)
@@ -130,7 +130,7 @@ def prediction_cli():
     prediction(args.query, args.num_out)
 
 
-def prediction(query: str, num_out: int):
+def api(query: str, num_out: int):
     predictor = SpeechPredictor()
     output = predictor.predict(query, num_out)
     logger.info(output)

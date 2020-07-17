@@ -11,7 +11,7 @@ setup(
         'ps_download = presidents_speeches.download:download',
         'ps_curate = presidents_speeches.curate:curate',
         'ps_train = presidents_speeches.models:model',
-        'ps_predict = presidents_speeches.api:prediction_cli',
+        'ps_predict = presidents_speeches.api:api_cli',
         'ps_upload = presidents_speeches.upload:upload'
     ]},
     install_requires=[
