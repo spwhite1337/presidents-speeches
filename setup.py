@@ -11,7 +11,8 @@ setup(
         'ps_download = presidents_speeches.download:download',
         'ps_curate = presidents_speeches.curate:curate',
         'ps_train = presidents_speeches.models:model',
-        'ps_predict = presidents_speeches.predictor:prediction_cli'
+        'ps_predict = presidents_speeches.predictor:prediction_cli',
+        'ps_upload = presidents_speeches.upload:upload'
     ]},
     install_requires=[
         'requests',
@@ -23,6 +24,7 @@ setup(
         'ipykernel',
         'gensim',
         'Pillow',
-        'tqdm'
+        'tqdm',
+        'awscli'
     ]
 )
