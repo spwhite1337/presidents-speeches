@@ -13,6 +13,10 @@ See examples below for some cool results.
 
 ![Presidents Logo](/docs/lincoln.jpg =256x)
 
+<img src="/docs/lincoln.jpg">
+
+<img src="/docs/lincoln.jpg" width="200">
+
 ## Procedure
 
 - Python 3.5
