@@ -6,15 +6,15 @@ from bs4 import BeautifulSoup
 
 from tqdm import tqdm
 
-from config import ROOT_DIR, logger
+from config import Config, logger
 
 
 class SpeechDownloader(object):
     """
     Scrape speech text for each president
     """
-    url_path = os.path.join(ROOT_DIR, 'presidents_speeches', 'utils', 'urls.json')
-    save_dir = os.path.join(ROOT_DIR, 'data', 'raw')
+    url_path = os.path.join(Config.ROOT_DIR, 'presidents_speeches', 'utils', 'urls.json')
+    save_dir = Config.RAW_DIR
 
     def __init__(self):
         # Load urls

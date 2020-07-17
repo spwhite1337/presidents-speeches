@@ -7,15 +7,15 @@ from tqdm import tqdm
 
 from gensim import corpora
 
-from config import ROOT_DIR, logger
+from config import Config, logger
 
 
 class SpeechCurator(object):
     """
     Object to curate speeches into corpora
     """
-    load_dir = os.path.join(ROOT_DIR, 'data', 'raw')
-    save_dir = os.path.join(ROOT_DIR, 'data', 'curated')
+    load_dir = Config.RAW_DIR
+    save_dir = Config.CURATED_DIR
 
     # Words to drop
     stoplist = set('for a of the and to in (applause.) -– - -- – –- q.'.split(' '))

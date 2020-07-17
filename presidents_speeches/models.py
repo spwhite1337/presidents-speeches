@@ -3,15 +3,15 @@ import pickle
 
 from gensim import corpora, models, similarities
 
-from config import ROOT_DIR, logger
+from config import Config, logger
 
 
 class SpeechModeler(object):
     """
     Object to model a vectorized corpus
     """
-    load_dir = os.path.join(ROOT_DIR, 'data', 'curated')
-    save_dir = os.path.join(ROOT_DIR, 'modeling', 'results')
+    load_dir = Config.CURATED_DIR
+    save_dir = Config.RESULTS_DIR
 
     def __init__(self, num_topics: int = 10):
         logger.info('Loading Curated Corpus, Dictionary')

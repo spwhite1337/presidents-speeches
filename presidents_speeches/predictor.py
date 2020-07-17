@@ -7,15 +7,15 @@ import pandas as pd
 
 from gensim import corpora, models, similarities
 
-from config import ROOT_DIR, logger
+from config import Config, logger
 
 
 class SpeechPredictor(object):
     """
     Object to determine the speech and president an input sentence is most similar
     """
-    data_dir = os.path.join(ROOT_DIR, 'data', 'curated')
-    load_dir = os.path.join(ROOT_DIR, 'modeling', 'results')
+    data_dir = Config.CURATED_DIR
+    load_dir = Config.RESULTS_DIR
 
     # Words to drop
     stoplist = set('for a of the and to in (applause.) -– - -- – –- q.'.split(' '))
