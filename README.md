@@ -7,7 +7,7 @@ In this project I scrape a corpus of president's speeches given in their officia
 NLP standards) and map it to an LSI space with 10 dimensions where a constituent "document" is defined as a sentence of 
 a speech. 
 
-An user input query is mapped to this latent space and compared to the corpus of documents (defined as sentences in
+An input query is mapped to this latent space and compared to the corpus of documents (defined as sentences in
 speeches). The most similar president and speech are returned (default is the top 10 most similar, but it is tunable). 
 See examples below for some cool results.
 
