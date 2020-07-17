@@ -127,7 +127,7 @@ def api_cli():
     parser.add_argument('--num_out', type=int, default=10)
     args = parser.parse_args()
 
-    prediction(args.query, args.num_out)
+    api(args.query, args.num_out)
 
 
 def api(query: str, num_out: int):
