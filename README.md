@@ -18,6 +18,7 @@ See examples below for some cool results.
 - Python 3.5
 - `cd presidents-speeches`
 - `pip install -e .`
+- `aws configure` (enter AWS keys in prompt)
 
 ## Get Data
 
