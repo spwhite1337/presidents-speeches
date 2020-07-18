@@ -137,5 +137,5 @@ def api(query: str, num_out: int = 10, display_output: bool = False):
     output = predictor.predict(query, num_out, display_output)
     if display_output:
         pp = pprint.PrettyPrinter(indent=4, compact=True)
-        logger.info('Output: \n {}'.format(pp.pprint(output)))
+        logger.info('Output: \n{}'.format(pp.pformat(output)))
     return output
