@@ -126,10 +126,10 @@ def api_cli():
     parser = argparse.ArgumentParser(prog='Presidential similarity')
     parser.add_argument('--query', type=str, default='Fake News')
     parser.add_argument('--num_out', type=int, default=10)
-    parser.add_argument('--display', action='store_true')
+    parser.add_argument('--display_output', action='store_true')
     args = parser.parse_args()
 
-    api(args.query, args.num_out, args.display)
+    api(args.query, args.num_out, args.display_output)
 
 
 def api(query: str, num_out: int = 10, display_output: bool = False):
