@@ -2,6 +2,7 @@ import os
 import re
 import argparse
 import pickle
+import pprint
 
 import pandas as pd
 
@@ -104,7 +105,7 @@ class SpeechPredictor(object):
         return {'speeches': speeches, 'presidents': presidents, 'speeches_sim': speeches_score,
                 'presidents_sim': presidents_score}
 
-    def predict(self, query: str, n: int = 10) -> dict:
+    def predict(self, query: str, n: int = 10, display_output: bool = False) -> dict:
         """
         Return the most similar speeches, presidents
         """
@@ -125,12 +126,16 @@ def api_cli():
     parser = argparse.ArgumentParser(prog='Presidential similarity')
     parser.add_argument('--query', type=str, default='Fake News')
     parser.add_argument('--num_out', type=int, default=10)
+    parser.add_argument('--display', action='store_true')
     args = parser.parse_args()
 
-    api(args.query, args.num_out)
+    api(args.query, args.num_out, args.display)
 
 
-def api(query: str, num_out: int):
+def api(query: str, num_out: int = 10, display_output: bool = False):
     predictor = SpeechPredictor()
-    output = predictor.predict(query, num_out)
-    logger.info(output)
+    output = predictor.predict(query, num_out, display_output)
+    if display_output:
+        pp = pprint.PrettyPrinter(indent=4, compact=True)
+        logger.info('Output: \n {}'.format(pp.pprint(output)))
+    return output
