@@ -31,8 +31,8 @@ See examples below for some cool results.
 
 ## Predict
 
-- `ps_predict --query "Fake News" --num_out 3 --display_output` will output the top three presidents and speeches most similar to the 
-input query.
+- `ps_predict --query "Fake News" --num_out 3 --display_output` will output the top three presidents and speeches most 
+similar to the input query.
 
 Example: 
 ```
