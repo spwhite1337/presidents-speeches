@@ -30,12 +30,12 @@ See examples below for some cool results.
 
 ## Predict
 
-- `ps_predict --query "Fake News" --num_out 3` with output the top three presidents and speeches most similar to the 
+- `ps_predict --query "Fake News" --num_out 3 --display_output` will output the top three presidents and speeches most similar to the 
 input query.
 
 Example: 
 ```
-> ps_predict --query "Fake News" --num_out 3
+> ps_predict --query "Fake News" --num_out 3 --display_output
 {
     'Fake News': {
         'presidents': ['trump', 'clinton', 'obama'], 
@@ -49,7 +49,7 @@ Example:
     }
 }
 
-> ps_predict --query "Vietnam civil rights" --num_out 3
+> ps_predict --query "Vietnam civil rights" --num_out 3 --display_output
 
 {
     'Vietnam civil rights': {
