@@ -66,14 +66,14 @@ def download():
     if args.aws:
         if not args.skipdata:
             logger.info('Downloading Data from AWS')
-            include_flags = '--exclude * --include corpus.pkl --include dictionary.dict --include *.mm ' \
-                            '--include *.mm.index --include speeches.json'
+            include_flags = "--exclude '*' --include 'corpus.pkl' --include 'dictionary.dict' --include '*.mm' " \
+                            "--include '*.mm.index' --include 'speeches.json'"
             aws_sync = 'aws s3 sync {} {} {}'.format(Config.CLOUD_DATA, Config.DATA_DIR, include_flags)
             os.system(aws_sync)
         if not args.skipresults:
             logger.info('Download Results from AWS')
-            include_flags = '--exclude * --include lsi.model --include lsi.model.projection ' \
-                            '--include similarities.index --include tfidf.model'
+            include_flags = "--exclude '*' --include 'lsi.model' --include 'lsi.model.projection' " \
+                            "--include 'similarities.index' --include 'tfidf.model'"
             aws_sync = 'aws s3 sync {} {} {}'.format(Config.CLOUD_RESULTS, Config.RESULTS_DIR, include_flags)
             os.system(aws_sync)
     else:
