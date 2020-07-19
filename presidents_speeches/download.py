@@ -72,22 +72,20 @@ def download():
         dryrun_arg = ' --dryrun'
         results_sync = '{} {}'.format(Config.CLOUD_RESULTS, Config.RESULTS_DIR)
         data_sync = '{} {}'.format(Config.CLOUD_DATA, Config.DATA_DIR)
-        data_include = " --exclude '*' --include 'presidents_speeches/*'"
-        results_include = " --exclude '*' --include 'presidents_speeches/*'"
+        include_flags = " --exclude '*' --include 'presidents_speeches/*'"
 
         if args.windows:
-            data_include = re.sub("'", "", data_include)
-            results_include = re.sub("'", "", results_include)
+            include_flags = re.sub("'", "", include_flags)
 
         if not args.skipdata:
             logger.info('Downloading Data from AWS')
-            ps_sync = sync_base + data_sync + data_include
+            ps_sync = sync_base + data_sync + include_flags
             ps_sync += dryrun_arg if args.dryrun else ''
             logger.info(ps_sync)
             os.system(ps_sync)
         if not args.skipresults:
             logger.info('Download Results from AWS')
-            ps_sync = sync_base + results_sync + results_include
+            ps_sync = sync_base + results_sync + include_flags
             ps_sync += dryrun_arg if args.dryrun else ''
             logger.info(ps_sync)
             os.system(ps_sync)
