@@ -31,6 +31,6 @@ def upload():
     if not args.skipresults:
         logger.info('Uploading Results')
         ps_sync = sync_base + results_sync + include_flag
-        ps_sync += dryrun_arg if args.dryun else ''
+        ps_sync += dryrun_arg if args.dryrun else ''
         logger.info(ps_sync)
         os.system(ps_sync)
