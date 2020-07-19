@@ -1,4 +1,5 @@
 import os
+import re
 import json
 import argparse
 
@@ -61,21 +62,37 @@ def download():
     parser.add_argument('--aws', action='store_true')
     parser.add_argument('--skipdata', action='store_true')
     parser.add_argument('--skipresults', action='store_true')
+    parser.add_argument('--windows', action='store_true')
+    parser.add_argument('--dryrun', action='store_true')
     args = parser.parse_args()
 
     if args.aws:
+        # General commands
+        sync_base = 'aws s3 sync '
+        dryrun_arg = ' --dryrun'
+        results_sync = '{} {}'.format(Config.CLOUD_RESULTS, Config.RESULTS_DIR)
+        data_sync = '{} {}'.format(Config.CLOUD_DATA, Config.DATA_DIR)
+        data_include = " --exclude '*' --include 'corpus.pkl' --include 'dictionary.dict' --include '*.mm' " \
+                       "--include '*.mm.index' --include 'speeches.json'"
+        results_include = " --exclude '*' --include 'lsi.model' --include 'lsi.model.projection' " \
+                          "--include 'similarities.index' --include 'tfidf.model'"
+
+        if args.windows:
+            data_include = re.sub("'", "", data_include)
+            results_include = re.sub("'", "", results_include)
+
         if not args.skipdata:
             logger.info('Downloading Data from AWS')
-            include_flags = "--exclude '*' --include 'corpus.pkl' --include 'dictionary.dict' --include '*.mm' " \
-                            "--include '*.mm.index' --include 'speeches.json'"
-            aws_sync = 'aws s3 sync {} {} {}'.format(Config.CLOUD_DATA, Config.DATA_DIR, include_flags)
-            os.system(aws_sync)
+            ps_sync = sync_base + data_sync + data_include
+            ps_sync += dryrun_arg if args.dryrun else ''
+            logger.info(ps_sync)
+            os.system(ps_sync)
         if not args.skipresults:
             logger.info('Download Results from AWS')
-            include_flags = "--exclude '*' --include 'lsi.model' --include 'lsi.model.projection' " \
-                            "--include 'similarities.index' --include 'tfidf.model'"
-            aws_sync = 'aws s3 sync {} {} {}'.format(Config.CLOUD_RESULTS, Config.RESULTS_DIR, include_flags)
-            os.system(aws_sync)
+            ps_sync = sync_base + results_sync + results_include
+            ps_sync += dryrun_arg if args.dryrun else ''
+            logger.info(ps_sync)
+            os.system(ps_sync)
     else:
         downloader = SpeechDownloader()
         downloader.download_speeches()
