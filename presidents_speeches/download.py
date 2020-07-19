@@ -16,7 +16,7 @@ class SpeechDownloader(object):
     Scrape speech text for each president
     """
     url_path = os.path.join(Config.ROOT_DIR, 'presidents_speeches', 'utils', 'urls.json')
-    save_dir = Config.RAW_DIR
+    save_dir = os.path.join(Config.DATA_DIR, 'presidents_speeches', 'raw')
 
     def __init__(self):
         # Load urls

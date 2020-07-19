@@ -10,8 +10,8 @@ class SpeechModeler(object):
     """
     Object to model a vectorized corpus
     """
-    load_dir = Config.CURATED_DIR
-    save_dir = Config.RESULTS_DIR
+    load_dir = os.path.join(Config.DATA_DIR, 'presidents_speeches', 'curated')
+    save_dir = os.path.join(Config.RESULTS_DIR, 'presidents_speeches')
 
     def __init__(self, num_topics: int = 10):
         logger.info('Loading Curated Corpus, Dictionary')

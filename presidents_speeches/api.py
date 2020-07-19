@@ -15,8 +15,8 @@ class SpeechPredictor(object):
     """
     Object to determine the speech and president an input sentence is most similar
     """
-    data_dir = Config.CURATED_DIR
-    load_dir = Config.RESULTS_DIR
+    data_dir = os.path.join(Config.DATA_DIR, 'presidents_speeches', 'curated')
+    load_dir = os.path.join(Config.RESULTS_DIR, 'presidents_speeches')
 
     # Words to drop
     stoplist = set('for a of the and to in (applause.) -– - -- – –- q.'.split(' '))

@@ -14,8 +14,8 @@ class SpeechCurator(object):
     """
     Object to curate speeches into corpora
     """
-    load_dir = Config.RAW_DIR
-    save_dir = Config.CURATED_DIR
+    load_dir = os.path.join(Config.DATA_DIR, 'presidents_speeches', 'raw')
+    save_dir = os.path.join(Config.DATA_DIR, 'presidents_speeches', 'curated')
 
     # Words to drop
     stoplist = set('for a of the and to in (applause.) -– - -- – –- q.'.split(' '))
