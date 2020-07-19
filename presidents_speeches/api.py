@@ -105,7 +105,7 @@ class SpeechPredictor(object):
         return {'speeches': speeches, 'presidents': presidents, 'speeches_sim': speeches_score,
                 'presidents_sim': presidents_score}
 
-    def predict(self, query: str, n: int = 10, display_output: bool = False) -> dict:
+    def predict(self, query: str, n: int = 10) -> dict:
         """
         Return the most similar speeches, presidents
         """
