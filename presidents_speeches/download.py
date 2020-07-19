@@ -72,10 +72,8 @@ def download():
         dryrun_arg = ' --dryrun'
         results_sync = '{} {}'.format(Config.CLOUD_RESULTS, Config.RESULTS_DIR)
         data_sync = '{} {}'.format(Config.CLOUD_DATA, Config.DATA_DIR)
-        data_include = " --exclude '*' --include 'corpus.pkl' --include 'dictionary.dict' --include '*.mm' " \
-                       "--include '*.mm.index' --include 'speeches.json'"
-        results_include = " --exclude '*' --include 'lsi.model' --include 'lsi.model.projection' " \
-                          "--include 'similarities.index' --include 'tfidf.model'"
+        data_include = " --exclude '*' --include 'presidents_speeches/*'"
+        results_include = " --exclude '*' --include 'presidents_speeches/*'"
 
         if args.windows:
             data_include = re.sub("'", "", data_include)
