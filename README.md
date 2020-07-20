@@ -24,6 +24,9 @@ See examples below for some cool results.
 
 - `ps_download` will scrape speeches from the urls in `urls.json`
 - Curate data with: `ps_curate`
+- Optional: Download raw / curated data from S3 with `ps_download --aws`; extra arguments include `--windows`, `--dryrun`
+`--skipdata`, and `--skipresults` which are used if you are on windows, want to test the download, want to skip files in 
+the data folder, or want to skip files in the results folder.
 
 ## Train
 
