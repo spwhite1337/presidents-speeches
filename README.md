@@ -13,6 +13,13 @@ See examples below for some cool results.
 
 <img src="/docs/lincoln.jpg" alt="Presidents Logo" width="256">
 
+---
+<p>
+   <img src="docs/gensim_logo.png" alt="Gensim Logo" width="256">
+</p>
+
+---
+
 ## Procedure
 
 - Python 3.5
